@@ -419,6 +419,99 @@ body {
 .page-footer td { display: table-cell; }
 .page-footer td:last-child { text-align: right; }
 
+/* ── SCREEN LAYOUT ──────────────────────────────── */
+@media screen {
+  body {
+    padding-top: 90px;
+  }
+
+  /* Header fijo */
+  #site-header {
+    position: fixed;
+    top: 0; left: 0; right: 0;
+    background: #2d4a2d;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    padding: 0 16px;
+    z-index: 100;
+    gap: 12px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.3);
+  }
+  .site-logo {
+    color: #c8852a;
+    font-size: 14px;
+    font-weight: 900;
+    letter-spacing: 1px;
+    flex: 1;
+    font-family: Arial, sans-serif;
+  }
+  .pdf-btn {
+    background: rgba(200,133,42,0.15);
+    border: 1px solid rgba(200,133,42,0.6);
+    color: #c8852a;
+    padding: 6px 14px;
+    border-radius: 3px;
+    cursor: pointer;
+    font-size: 12px;
+    font-family: 'Courier New', monospace;
+    white-space: nowrap;
+  }
+  .pdf-btn:hover { background: rgba(200,133,42,0.3); }
+  .hamburger {
+    display: none;
+    background: none;
+    border: none;
+    color: rgba(255,255,255,0.7);
+    font-size: 22px;
+    cursor: pointer;
+    line-height: 1;
+    padding: 0 4px;
+  }
+
+  /* Tab bar sticky */
+  #tab-bar {
+    position: fixed;
+    top: 50px; left: 0; right: 0;
+    background: #3d6b3a;
+    display: flex;
+    z-index: 99;
+    border-bottom: 1px solid rgba(0,0,0,0.2);
+    overflow-x: auto;
+  }
+  .tab-btn {
+    background: none;
+    border: none;
+    border-bottom: 2px solid transparent;
+    color: rgba(255,255,255,0.5);
+    padding: 10px 18px;
+    font-size: 13px;
+    cursor: pointer;
+    white-space: nowrap;
+    font-family: Arial, sans-serif;
+    transition: color 0.15s;
+  }
+  .tab-btn:hover { color: rgba(255,255,255,0.85); }
+  .tab-btn.active {
+    color: #c8852a;
+    border-bottom-color: #c8852a;
+    font-weight: bold;
+  }
+
+  /* Tabs ocultos por defecto — JS controla display */
+  .tab-content {
+    display: none;
+    min-height: calc(100vh - 90px);
+  }
+
+  /* Eliminar page-breaks en pantalla */
+  .page {
+    page-break-before: auto;
+    page-break-after: auto;
+    min-height: auto;
+  }
+}
+
 </style>
 </head>
 <body>
