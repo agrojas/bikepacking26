@@ -422,9 +422,22 @@ body {
 </style>
 </head>
 <body>
+<header id="site-header">
+  <span class="site-logo">ESQUEL LOOP 520</span>
+  <button class="pdf-btn" onclick="window.print()">🖨 Exportar PDF</button>
+  <button class="hamburger" id="hamburger-btn" onclick="toggleMenu()" aria-label="Menú">☰</button>
+</header>
+<nav id="tab-bar">
+  <button class="tab-btn active" data-tab="portada">Portada</button>
+  <button class="tab-btn" data-tab="mapa">Mapa</button>
+  <button class="tab-btn" data-tab="itinerario">Itinerario</button>
+  <button class="tab-btn" data-tab="descanso">Descanso</button>
+  <button class="tab-btn" data-tab="fronteras">Fronteras</button>
+  <button class="tab-btn" data-tab="equipo">Equipo</button>
+</nav>
 
 <!-- ═══════════════════════════════════════════════ PAGE 1: COVER -->
-<div class="page cover-page">
+<div class="page cover-page tab-content" id="portada">
   <div class="cover">
     <div class="cover-tag">Informe de Ruta · Bikepacking Patagónico · Nov–Dic 2025</div>
     <div class="cover-title">Esquel<span>Loop 520</span></div>
@@ -449,7 +462,7 @@ body {
 </div>
 
 <!-- ═══════════════════════════════════════════════ PAGE 2: MAP -->
-<div class="page map-page">
+<div class="page map-page tab-content" id="mapa">
   <div class="map-header">
     <div class="map-header-l">
       <div class="map-header-title">Mapa de Ruta</div>
@@ -536,7 +549,7 @@ body {
 </div>
 
 <!-- ═══════════════════════════════════════════════ PÁGINAS 3–4: DÍAS 1–7 -->
-<div class="page itin-page">
+<div class="page itin-page tab-content" id="itinerario">
   <div style="padding: 0 0 10px;">
     <div class="sec-label">// itinerario detallado</div>
     <div class="sec-title">7 Días de Pedaleo</div>
@@ -622,7 +635,7 @@ body {
 </div>
 
 <!-- ═══════════════════════════════════════════════ PAGE 5: DÍA DE DESCANSO -->
-<div class="page">
+<div class="page tab-content" id="descanso">
   <div style="padding: 0 0 10px;">
     <div class="sec-label">// planificación del grupo</div>
     <div class="sec-title">Día de Descanso — ¿Dónde Meterlo?</div>
@@ -677,7 +690,7 @@ body {
 </div>
 
 <!-- ═══════════════════════════════════════════════ PAGE 6: FRONTERAS + SERVICIOS -->
-<div class="page">
+<div class="page tab-content" id="fronteras">
   <div style="padding: 0 0 10px;">
     <div class="sec-label">// logística fronteriza</div>
     <div class="sec-title">Cruces de Frontera</div>
@@ -741,7 +754,7 @@ body {
 </div>
 
 <!-- ═══════════════════════════════════════════════ PAGE 7: EQUIPO + HIGHLIGHTS -->
-<div class="page">
+<div class="page tab-content" id="equipo">
   <div style="padding:0 0 10px;">
     <div class="sec-label">// preparación</div>
     <div class="sec-title">Equipo Esencial</div>
