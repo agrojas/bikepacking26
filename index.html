@@ -592,6 +592,60 @@ body {
   .page-footer { display: none; }
 }
 
+/* ── MOBILE ─────────────────────────────────────── */
+@media screen and (max-width: 768px) {
+  .hamburger { display: block; }
+  .pdf-btn { padding: 5px 10px; font-size: 11px; }
+
+  #tab-bar {
+    flex-direction: column;
+    top: 50px;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.25s ease;
+  }
+  #tab-bar.open {
+    max-height: 400px;
+    border-bottom: 1px solid rgba(0,0,0,0.2);
+  }
+  .tab-btn {
+    padding: 12px 20px;
+    border-bottom: 1px solid rgba(255,255,255,0.08);
+    border-left: 3px solid transparent;
+    text-align: left;
+  }
+  .tab-btn.active {
+    border-left-color: #c8852a;
+    border-bottom-color: transparent;
+  }
+
+  body { padding-top: 50px; }
+  .tab-content { min-height: calc(100vh - 50px); }
+
+  .cover-title { font-size: 44px; }
+  .snum { font-size: 28px; }
+  .cover-stat { width: 33.3%; }
+
+  .page:not(.cover-page):not(.map-page) { padding: 16px; }
+
+  .fron-grid { flex-direction: column; }
+
+  .days-table td.day-n { font-size: 18px; }
+
+  /* Gear grid: 2 columnas en mobile */
+  table[style*="border-spacing:5px"] tr {
+    display: flex;
+    flex-wrap: wrap;
+  }
+  table[style*="border-spacing:5px"] td {
+    width: 48% !important;
+  }
+
+  /* POI grid: 1 columna en mobile */
+  .poi-grid, .poi-col { display: block !important; width: 100% !important; }
+  .poi-col { padding: 0 !important; }
+}
+
 </style>
 </head>
 <body>
