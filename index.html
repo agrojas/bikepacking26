@@ -510,6 +510,86 @@ body {
     page-break-after: auto;
     min-height: auto;
   }
+
+  /* Portada — hero full width */
+  .cover {
+    padding: 36px 24px 28px;
+    min-height: auto;
+  }
+  .cover-title { font-size: 64px; }
+  .cover-stats { margin-top: 24px; }
+  .cover-stat { padding: 16px 12px 0 0; }
+  .snum { font-size: 38px; }
+
+  /* Mapa — ocupa toda la altura disponible */
+  .map-page {
+    min-height: calc(100vh - 90px);
+    display: flex;
+    flex-direction: column;
+  }
+  .map-img-wrap {
+    flex: 1;
+    height: calc(100vh - 140px);
+  }
+  .map-img-wrap iframe {
+    height: 100%;
+  }
+
+  /* Itinerario — day cards mejoradas */
+  .days-table tr {
+    display: block;
+    border: 1px solid #c4b89a;
+    border-left: 4px solid #2d4a2d;
+    border-radius: 4px;
+    margin-bottom: 10px;
+    overflow: hidden;
+  }
+  .days-table tr.itin-break { display: none; }
+  .days-table tr:last-child { border-bottom: 1px solid #c4b89a; }
+  .days-table td.day-n {
+    display: inline-block;
+    width: auto;
+    padding: 8px 14px;
+    vertical-align: middle;
+  }
+  .days-table td.day-body { display: block; padding: 12px 16px; }
+  .day-desc { font-size: 13px; margin-bottom: 8px; }
+  .day-tip { font-size: 12px; }
+  .day-route-name { font-size: 15px; }
+
+  /* Secciones de contenido — spacing web */
+  .page:not(.cover-page):not(.map-page) {
+    padding: 24px 28px;
+    max-width: 900px;
+    margin: 0 auto;
+    width: 100%;
+  }
+  .sec-title { font-size: 24px; margin-bottom: 18px; }
+  .sec-label { font-size: 11px; }
+
+  /* Descanso */
+  .rest-opt { margin-bottom: 14px; }
+  .rest-opt-body { font-size: 13px; }
+  .rest-opt-tip { font-size: 11px; }
+  .ri-table td { font-size: 13px; }
+
+  /* Fronteras */
+  .fron-grid { display: flex; gap: 16px; margin: 0 0 16px; }
+  .fron-col { display: block; flex: 1; }
+  .fron-body ul li { font-size: 12px; }
+  .doc-box p { font-size: 13px; }
+
+  /* Servicios */
+  .svc-table { font-size: 13px; }
+  .svc-note { font-size: 11px; }
+
+  /* Equipo — gear grid */
+  .gear-cell { font-size: 12px; padding: 10px 12px; }
+  .poi-card h3 { font-size: 13px; }
+  .poi-card ul li { font-size: 12px; }
+
+  /* Footer de página — solo para print */
+  .page-footer { display: none; }
 }
 
 </style>
