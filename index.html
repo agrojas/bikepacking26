@@ -852,5 +852,35 @@ body {
   </div>
 </div>
 
+<script>
+  function showTab(tabId) {
+    document.querySelectorAll('.tab-content').forEach(function(el) {
+      el.style.display = 'none';
+    });
+    document.querySelectorAll('.tab-btn').forEach(function(btn) {
+      btn.classList.remove('active');
+    });
+    var target = document.getElementById(tabId);
+    if (target) target.style.display = 'block';
+    var activeBtn = document.querySelector('[data-tab="' + tabId + '"]');
+    if (activeBtn) activeBtn.classList.add('active');
+    window.scrollTo(0, 0);
+  }
+
+  function toggleMenu() {
+    document.getElementById('tab-bar').classList.toggle('open');
+  }
+
+  document.querySelectorAll('.tab-btn').forEach(function(btn) {
+    btn.addEventListener('click', function() {
+      showTab(btn.dataset.tab);
+      document.getElementById('tab-bar').classList.remove('open');
+    });
+  });
+
+  // Mostrar primer tab al cargar
+  showTab('portada');
+</script>
+
 </body>
 </html>
