@@ -162,7 +162,58 @@ body {
 
 /* ── ITINERARY PAGE ─────────────────────────────── */
 .itin-page { padding: 14px 16px 8px; }
-@media print { .itin-break { page-break-after: always; } }
+/* ── PRINT / PDF ────────────────────────────────── */
+@media print {
+  /* Ocultar navegación web */
+  #site-header,
+  #tab-bar { display: none !important; }
+
+  /* Mostrar todos los tabs en secuencia */
+  .tab-content {
+    display: block !important;
+    min-height: auto;
+  }
+
+  /* Restaurar page breaks */
+  .page {
+    page-break-before: always;
+    min-height: 240mm;
+  }
+  .page:first-of-type,
+  .cover-page { page-break-before: auto; }
+
+  /* Restaurar padding body */
+  body { padding-top: 0; }
+
+  /* Restaurar layout original de itinerario */
+  .days-table tr {
+    display: table-row !important;
+    border: none;
+    border-bottom: 1px solid #c4b89a;
+    border-radius: 0;
+    margin-bottom: 0;
+  }
+  .days-table tr.itin-break { display: table-row !important; }
+  .days-table td.day-n { display: table-cell !important; }
+  .days-table td.day-body { display: table-cell !important; }
+
+  /* Restaurar padding de páginas de contenido */
+  .page:not(.cover-page):not(.map-page) {
+    padding: 14px 16px;
+    max-width: none;
+    margin: 0;
+  }
+
+  /* Restaurar grid de fronteras */
+  .fron-grid { display: table !important; }
+  .fron-col { display: table-cell !important; }
+
+  /* Footer de página visible en print */
+  .page-footer { display: table !important; }
+
+  /* Mapa: altura fija en print */
+  .map-img-wrap { height: 228mm; }
+}
 .days-table { width: 100%; border-collapse: collapse; }
 .days-table tr { border-bottom: 1px solid #c4b89a; page-break-inside: avoid; }
 .days-table tr:last-child { border-bottom: none; }
