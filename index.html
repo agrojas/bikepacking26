@@ -628,8 +628,9 @@ body {
   .ri-table td { font-size: 15px; }
 
   /* Fronteras */
-  .fron-grid { display: flex; gap: 16px; margin: 0 0 16px; }
-  .fron-col { display: block; flex: 1; }
+  .fron-grid { display: block; margin: 0 0 16px; border-spacing: 0; width: 100%; }
+  .fron-grid tr { display: flex; gap: 16px; width: 100%; }
+  .fron-col { display: block; flex: 1; min-width: 0; padding: 0 !important; }
   .fron-body ul li { font-size: 14px; }
   .doc-box p { font-size: 15px; }
 
@@ -682,7 +683,7 @@ body {
 
   .page:not(.cover-page):not(.map-page) { padding: 16px; }
 
-  .fron-grid { flex-direction: column; }
+  .fron-grid tr { flex-direction: column; }
 
   .days-table td.day-n { font-size: 18px; }
 
